@@ -1,0 +1,39 @@
+# ls
+alias ls='exa -g --git --group-directories-first --color=auto'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ll -la'
+
+# grep
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+
+# nvim aliases
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '
+alias config-vim='vim ~/.config/nvim/init.vim'
+alias config-i3='vim ~/.config/i3/config'
+alias config-sx='vim ~/.config/sxhkd/sxhkdrc'
+alias config-alias='vim ~/.config/zsh/zsh_aliases'
+# pacman
+alias i='sudo pacman -S'
+alias r='sudo pacman -Rns'
+alias pc='sudo pacman -Sc' # clean cache
+alias u='sudo pacman -Syu' # sync database and update
+alias s='sudo pacman -Ss'
+alias pl='pacman -Qq' # list installed packages
+alias pll='pacman -Qi' # list installed packages with details
+alias yl='pacman -Qm' # list foreign packages
+alias yll='pacman -Qmi' # list foreign packages with details
+
+# yay
+alias yi='yay -S'
+alias yr='yay -Rns'
+alias yc='yay -c'
+alias yu='yay -Su'
+alias ys='yay -Ss'
+
+
+alias cls='printf "\033c"'

@@ -1,0 +1,95 @@
+Print
+    maim -u | xclip -selection clipboard -t image/png
+
+# take a screenshot of the entire screen and copy it to the clipboard then save it
+alt + Print
+    maim -u | tee ~/Pictures/screenshots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+
+# take a screenshot of the selected portion of the screen and copy it to the clipboard
+ctrl + Print
+    maim -s | xclip -selection clipboard -t image/png
+
+# take a screenshot of the selected portion of the screen and copy it to the clipboard then save it 
+ctrl + shift + Print
+    maim -s | tee ~/Pictures/screenshots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+
+#open connected devices
+super + m
+    ~/.scripts/mount.sh
+
+#refresh sxhkd
+super + shift + r 
+    killall -SIGUSR1 sxhkd
+
+#adjust volume
+{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+    ~/.scripts/volume.sh  {higher, lower, toggle}
+
+#adjust mic level
+shift + {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+    ~/.scripts/mic.sh  {higher, lower, toggle}
+
+#adjust brightness level
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    ~/.scripts/brightness.sh  {higher, lower}
+
+#move through tabs
+{super, super + shift, shift} + Tab 
+    i3-msg workspace {next, prev, back_and_forth}
+
+#open kitty
+super + Return
+    exec kitty
+
+#kill process
+super + shift + q
+    i3-msg kill
+
+#open dmenu
+super + d
+    dmenu_run
+
+#change focused workspace 
+super + {Left, Down, Up, Right}
+    i3-msg focus {left, down, up, right}
+
+#move focused workspace 
+super + shift + {Left, Down, Up, Right}
+    i3-msg move {left, down, up, right}
+
+#split workspace
+super + {h, v}
+    i3-msg split {h, v}
+
+#fullscreen mode
+super + f
+    i3-msg fullscreen toggle
+
+#remove i3 bar
+super + shift + f
+    ~/.scripts/workspace_fullscreen.sh
+
+super + {s, w, e}
+    i3-msg layout {stacking, tabbed, toggle split}
+
+super + shift + space
+    i3-msg floating toggle
+
+super + x
+    i3lock -i /home/eslam/Pictures/Backgrounds/Red/fit.png
+
+super + shift + x
+    ~/.scripts/power.sh
+
+super + ctrl + r
+   i3-msg restart 
+
+super + r
+    i3-msg mode "resize"
+
+super + a
+    i3-msg mode "launcher"
+
+super+End
+    exec shutdown now
+
