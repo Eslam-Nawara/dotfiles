@@ -53,14 +53,14 @@ interval=1
 [separator]
 
 [date]
-label= 
+label=🗓️
 command=$HOME/.scripts/date.sh
 interval=60
 
 [separator]
 
 [time]
-label= 
+label=⌚ 
 command=date '+%I:%M %p'
 interval=1
 
@@ -69,3 +69,5 @@ interval=1
 [language]
 command=$HOME/.scripts/get_language.sh
 interval=1
+
+[separator]

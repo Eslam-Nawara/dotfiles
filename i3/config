@@ -17,15 +17,15 @@ hide_edge_borders smart
 gaps inner 7
 gaps outer 3
 
-font pango: NotoSansArabic-Regular 12
+font pango: myFonts 
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
 set $ws2 "2: "
-set $ws3 "3: "
+set $ws3 "3: 🎧"
 set $ws4 "4: "
-set $ws5 "5: "
+set $ws5 "5: "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -61,14 +61,16 @@ assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="TelegramDesktop"] $ws4
 assign [class="anghami"] $ws3
+assign [class="youtube"] $ws5
 
 # launcher
 mode "launcher" {
     bindsym f exec firefox;                                                                             mode "default"
     bindsym t exec telegram-desktop;                                                                    mode "default"
-    bindsym c exec clion;                                                                               mode "default"
+    bindsym c exec code;                                                                                 mode "default"
     bindsym r exec kitty -e ranger;                                                                     mode "default"
     bindsym a exec firefox --new-instance -P anghami --class=anghami https://play.anghami.com/home;     mode "default"
+    bindsym y exec firefox --new-instance -P youtube --class=youtube https://youtube.com;               mode "default"
     bindsym s exec flatpak run eu.tiliado.NuvolaAppAnghami;                                             mode "default"
     bindsym Escape                                                                                      mode "default"
     bindsym q                                                                                           mode "default"

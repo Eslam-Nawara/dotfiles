@@ -33,7 +33,7 @@ call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.82'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-telescope/telescope.nvim'
@@ -52,7 +52,6 @@ Plug 'tpope/vim-repeat'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'tpope/vim-commentary'
-Plug 'euclio/vim-markdown-composer'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
@@ -115,11 +114,6 @@ function! ResCur()
 endfunction
 autocmd BufWinEnter * call ResCur()
 
-" check back space
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 "sml
 function! UseREPL()
@@ -134,22 +128,25 @@ function! UseREPL()
 endfunction
 
 augroup vimbettersml
-
     let g:sml_smlnj_executable = '/usr/lib/smlnj/bin/sml'
 
     au FileType sml nnoremap <silent> <buffer> <F4> :SMLReplStop<CR>:call UseREPL()<CR>
-    au FileType sml nnoremap <silent> <buffer> <F16> :SMLReplStop<CR>
-
+    au FileType sml nnoremap <silent> <buffer> <S-F4> :SMLReplStop<CR>
 augroup END
 
 " Tab completion
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
+inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <Tab>
+            \ coc#pum#visible() ? coc#pum#next(1) :
+            \ CheckBackspace() ? "\<Tab>" :
             \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
-            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " coc show documentation
 function! ShowDocumentation()
     if CocAction('hasProvider', 'hover')
