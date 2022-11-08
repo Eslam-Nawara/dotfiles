@@ -120,7 +120,7 @@ function! UseREPL()
     write
     SMLReplStart
     wincmd J
-    resize 13
+    resize 10
     wincmd k
     SMLReplClear
     sleep 100m
@@ -130,8 +130,8 @@ endfunction
 augroup vimbettersml
     let g:sml_smlnj_executable = '/usr/lib/smlnj/bin/sml'
 
-    au FileType sml nnoremap <silent> <buffer> <F4> :SMLReplStop<CR>:call UseREPL()<CR>
-    au FileType sml nnoremap <silent> <buffer> <S-F4> :SMLReplStop<CR>
+    au FileType sml nnoremap <silent> <buffer> <F2> :SMLReplStop<CR>:call UseREPL()<CR>
+    au FileType sml nnoremap <silent> <buffer> <S-F2> :SMLReplStop<CR>
 augroup END
 
 " Tab completion
