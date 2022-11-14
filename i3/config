@@ -1,7 +1,7 @@
 set $mod Mod4
 
 # auto start
-exec feh --bg-scale /home/eslam/Pictures/Backgrounds/Red/1.jpg
+exec feh --bg-scale /home/eslam/Pictures/1.jpg
 exec nm-applet
 exec sxhkd
 exec picom

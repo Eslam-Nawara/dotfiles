@@ -76,7 +76,7 @@ super + shift + space
     i3-msg floating toggle
 
 super + x
-    i3lock -i /home/eslam/Pictures/Backgrounds/Red/fit.png
+    i3lock -i /home/eslam/Pictures/1.png
 
 super + shift + x
     ~/.scripts/power.sh
