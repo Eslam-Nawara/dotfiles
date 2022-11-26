@@ -9,8 +9,8 @@ exec picom
 floating_modifier $mod
 
 # gaps
-for_window [class=".*"] border pixel 0
-default_border pixel 1
+for_window [class=".*"] border pixel 2
+default_border pixel 2
 default_floating_border pixel 2
 smart_gaps on
 hide_edge_borders smart
