@@ -1,32 +1,3 @@
-set nocompatible
-set path+=**,.**
-set wildmenu
-set clipboard=unnamedplus
-set encoding=utf-8
-set showcmd
-set mouse=a
-set secure exrc
-set guicursor=
-set relativenumber
-set nu
-set nohlsearch
-set hidden
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set nowrap
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set scrolloff=8
-set signcolumn=yes
-set colorcolumn=100
-set foldmethod=marker
-set termguicolors
 call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
@@ -56,12 +27,4 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
-
-"remaps
-let mapleader = " "
-nmap <silent><TAB> :bn <cr>
-nmap <silent><A-TAB> :bp <cr>
-nmap <silent><A-ESC> :bd <cr>
-
-nmap <leader>fm :Autoformat<cr>
 
