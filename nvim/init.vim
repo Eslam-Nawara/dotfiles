@@ -27,6 +27,7 @@ set signcolumn=yes
 set colorcolumn=100
 set foldmethod=marker
 set termguicolors
+
 call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
@@ -56,12 +57,9 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
-
 "remaps
 let mapleader = " "
 nmap <silent><TAB> :bn <cr>
 nmap <silent><A-TAB> :bp <cr>
 nmap <silent><A-ESC> :bd <cr>
-
 nmap <leader>fm :Autoformat<cr>
-

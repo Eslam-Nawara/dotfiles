@@ -26,5 +26,3 @@ Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'farmergreg/vim-lastplace'
 call plug#end()
-
-
