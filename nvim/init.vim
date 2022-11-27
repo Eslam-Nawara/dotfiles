@@ -33,7 +33,7 @@ call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.82'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-telescope/telescope.nvim'
@@ -55,6 +55,7 @@ Plug 'tpope/vim-commentary'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 call plug#end()
@@ -104,16 +105,6 @@ require ('Lualine')
 require ('Nightfox')
 require ('CodeRunner')
 END
-
-" Restores the cursor position and its autocmd.
-function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
-autocmd BufWinEnter * call ResCur()
-
 
 "sml
 function! UseREPL()

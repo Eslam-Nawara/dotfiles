@@ -11,7 +11,7 @@ require('code_runner').setup {
         cpp = 'g++ $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt && rm $fileNameWithoutExt',
         rust = 'cargo run',
         python = 'python3 $fileName',
-        scheme = 'racket $fileName',
+        scheme = 'racket  $fileName',
     },
 
     vim.keymap.set('n', '<F1>', ':w<CR>:RunCode<CR>', { noremap = true, silent = true }),
