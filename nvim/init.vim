@@ -37,7 +37,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'iamcco/coc-spell-checker'
@@ -55,6 +54,8 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'farmergreg/vim-lastplace'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 "remaps
