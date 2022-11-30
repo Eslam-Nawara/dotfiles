@@ -27,6 +27,7 @@ set signcolumn=yes
 set colorcolumn=100
 set foldmethod=marker
 set termguicolors
+set updatetime=100
 
 call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
@@ -56,6 +57,8 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'farmergreg/vim-lastplace'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "remaps
@@ -64,3 +67,5 @@ nmap <silent><TAB> :bn <cr>
 nmap <silent><A-TAB> :bp <cr>
 nmap <silent><A-ESC> :bd <cr>
 nmap <leader>fm :Autoformat<cr>
+
+autocmd BufWinEnter * GitGutterLineNrHighlightsEnable
