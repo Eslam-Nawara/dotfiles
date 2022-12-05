@@ -5,4 +5,5 @@ export FILE="ranger"
 export TERMINAL="kitty"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export GOPATH="$HOME/.go"
-export PATH="$PATH:$HOME/.local/bin":$GOPATH/bin
+export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"

@@ -12,6 +12,7 @@ require('code_runner').setup {
         rust = 'cargo run',
         python = 'python3 $fileName',
         scheme = 'racket  $fileName',
+        ruby = 'ruby  $fileName',
     },
 
     vim.keymap.set('n', '<F1>', ':w<CR>:RunCode<CR>', { noremap = true, silent = true }),
