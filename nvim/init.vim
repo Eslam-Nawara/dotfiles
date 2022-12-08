@@ -59,6 +59,8 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 "remaps
