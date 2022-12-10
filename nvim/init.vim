@@ -33,8 +33,8 @@ call plug#begin( '~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'neoclide/coc.nvim', {'tag': 'v0.0.82'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
