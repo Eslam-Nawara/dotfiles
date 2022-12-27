@@ -57,6 +57,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sainnhe/gruvbox-material'
+Plug 'williamboman/mason.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 call plug#end()
 
 "remaps
@@ -65,5 +68,8 @@ nmap <silent><TAB> :bn <cr>
 nmap <silent><A-TAB> :bp <cr>
 nmap <silent><A-ESC> :bd <cr>
 nmap <leader>fm :Autoformat<cr>
+nmap <leader>gg :Git<cr>
+
+let g:formatters_go = ['gofumpt']
 
 autocmd BufWinEnter * GitGutterLineNrHighlightsEnable

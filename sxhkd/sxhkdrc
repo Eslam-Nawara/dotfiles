@@ -93,3 +93,5 @@ super + a
 super+End
     exec shutdown now
 
+super+c
+    exec /home/eslam/Desktop/javascript/index.sh 
