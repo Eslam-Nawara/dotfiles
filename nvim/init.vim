@@ -68,8 +68,14 @@ nmap <silent><TAB> :bn <cr>
 nmap <silent><A-TAB> :bp <cr>
 nmap <silent><A-ESC> :bd <cr>
 nmap <leader>fm :Autoformat<cr>
-nmap <leader>gg :Git<cr>
+nmap <silent>gg :Git<cr>
 
 let g:formatters_go = ['gofumpt']
 
 autocmd BufWinEnter * GitGutterLineNrHighlightsEnable
+
+autocmd Filetype fugitive call SetFugitiveOptions()
+function SetFugitiveOptions()
+    wincmd H
+    vert resize 40 
+endfunction
