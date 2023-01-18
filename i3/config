@@ -21,78 +21,48 @@ font pango: myFonts
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: 🎧"
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $terminal "1: "
+set $firefox "2: "
+set $music "3: 🎧"
+set $telegram "4: "
+set $fileManager "5: "
+set $watch "6: "
+set $pdf "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
-bindsym $mod+1 workspace  $ws1
-bindsym $mod+2 workspace  $ws2
-bindsym $mod+3 workspace  $ws3
-bindsym $mod+4 workspace  $ws4
-bindsym $mod+5 workspace  $ws5
-bindsym $mod+6 workspace  $ws6
-bindsym $mod+7 workspace  $ws7
+bindsym $mod+1 workspace  $terminal
+bindsym $mod+2 workspace  $firefox
+bindsym $mod+3 workspace  $music
+bindsym $mod+4 workspace  $telegram
+bindsym $mod+5 workspace  $fileManager
+bindsym $mod+6 workspace  $watch
+bindsym $mod+7 workspace  $pdf        
 bindsym $mod+8 workspace  $ws8
 bindsym $mod+9 workspace  $ws9
 bindsym $mod+0 workspace  $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace  $ws1
-bindsym $mod+Shift+2 move container to workspace  $ws2
-bindsym $mod+Shift+3 move container to workspace  $ws3
-bindsym $mod+Shift+4 move container to workspace  $ws4
-bindsym $mod+Shift+5 move container to workspace  $ws5
-bindsym $mod+Shift+6 move container to workspace  $ws6
-bindsym $mod+Shift+7 move container to workspace  $ws7
+bindsym $mod+Shift+1 move container to workspace  $terminal
+bindsym $mod+Shift+2 move container to workspace  $firefox
+bindsym $mod+Shift+3 move container to workspace  $music
+bindsym $mod+Shift+4 move container to workspace  $telegram
+bindsym $mod+Shift+5 move container to workspace  $fileManager
+bindsym $mod+Shift+6 move container to workspace  $watch
+bindsym $mod+Shift+7 move container to workspace  $pdf        
 bindsym $mod+Shift+8 move container to workspace  $ws8
 bindsym $mod+Shift+9 move container to workspace  $ws9
 bindsym $mod+Shift+0 move container to workspace  $ws10
 
-# default workspaces
-assign [class="kitty"] $ws1
-assign [class="firefox"] $ws2
-assign [class="TelegramDesktop"] $ws4
-assign [class="anghami"] $ws3
-assign [class="youtube"] $ws5
-
-# launcher
-mode "launcher" {
-    bindsym f exec firefox;                                                                             mode "default"
-    bindsym t exec telegram-desktop;                                                                    mode "default"
-    bindsym c exec code;                                                                                 mode "default"
-    bindsym r exec kitty -e ranger;                                                                     mode "default"
-    bindsym a exec firefox --new-instance -P anghami --class=anghami https://play.anghami.com/home;     mode "default"
-    bindsym y exec firefox --new-instance -P youtube --class=youtube https://youtube.com;               mode "default"
-    bindsym s exec flatpak run eu.tiliado.NuvolaAppAnghami;                                             mode "default"
-    bindsym Escape                                                                                      mode "default"
-    bindsym q                                                                                           mode "default"
-}
-
-# resize 
-mode "resize" {
-    bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
-
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Escape mode "default"
-    bindsym q mode      "default"
-}
+assign [class="mpv"] $watch
+assign [class="syncplay"] $watch
+assign [class="firefox"] $firefox
+assign [class="TelegramDesktop"] $telegram
+assign [class="discord"] $discord
+assign [class="okular"] $pdf
+assign [class="anghami"] $music
 
 bar {
     status_command i3blocks 
@@ -112,4 +82,16 @@ bar {
         urgent_workspace    #17171780   #17171780    #C40808FF
         binding_mode        #17171780   #17171780    #FFFFFFFF
     }
+}
+
+
+mode "Transfer" {
+    bindsym w exec ~/.scripts/app_handler.sh "mt_firefox";     mode "default"
+    bindsym t exec ~/.scripts/app_handler.sh "mt_telegram";    mode "default"
+    bindsym r exec ~/.scripts/app_handler.sh "mt_ranger";      mode "default"
+    bindsym s exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
+    bindsym a exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
+    bindsym d exec ~/.scripts/app_handler.sh "mt_discord";     mode "default"
+    bindsym c exec ~/.scripts/app_handler.sh "mt_code";        mode "default"
+    bindsym Escape mode "default";
 }

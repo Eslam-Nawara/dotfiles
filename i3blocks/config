@@ -68,6 +68,7 @@ interval=1
 
 [language]
 command=$HOME/.scripts/get_language.sh
-interval=1
+interval=once
+signal=12
 
 [separator]
