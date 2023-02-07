@@ -58,6 +58,8 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'williamboman/mason.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 "remaps
@@ -67,8 +69,6 @@ nmap <silent><A-TAB> :bp <cr>
 nmap <silent><A-ESC> :bd <cr>
 nmap <leader>fm :Autoformat<cr>
 nmap <silent>gg :Git<cr>
-
-let g:formatters_go = ['gofumpt']
 
 autocmd BufWinEnter * GitGutterLineNrHighlightsEnable
 
