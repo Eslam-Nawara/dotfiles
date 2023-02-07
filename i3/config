@@ -28,7 +28,7 @@ set $telegram "4: "
 set $fileManager "5: "
 set $watch "6: "
 set $pdf "7: "
-set $ws8 "8: "
+set $discord "8: "
 set $ws9 "9: "
 set $ws10 "10: "
 
@@ -40,7 +40,7 @@ bindsym $mod+4 workspace  $telegram
 bindsym $mod+5 workspace  $fileManager
 bindsym $mod+6 workspace  $watch
 bindsym $mod+7 workspace  $pdf        
-bindsym $mod+8 workspace  $ws8
+bindsym $mod+8 workspace  $discord
 bindsym $mod+9 workspace  $ws9
 bindsym $mod+0 workspace  $ws10
 
@@ -52,11 +52,12 @@ bindsym $mod+Shift+4 move container to workspace  $telegram
 bindsym $mod+Shift+5 move container to workspace  $fileManager
 bindsym $mod+Shift+6 move container to workspace  $watch
 bindsym $mod+Shift+7 move container to workspace  $pdf        
-bindsym $mod+Shift+8 move container to workspace  $ws8
+bindsym $mod+Shift+8 move container to workspace  $discord
 bindsym $mod+Shift+9 move container to workspace  $ws9
 bindsym $mod+Shift+0 move container to workspace  $ws10
 
 assign [class="mpv"] $watch
+assign [class="ranger"] $fileManager
 assign [class="syncplay"] $watch
 assign [class="firefox"] $firefox
 assign [class="TelegramDesktop"] $telegram
@@ -67,7 +68,7 @@ assign [class="anghami"] $music
 bar {
     status_command i3blocks 
     i3bar_command i3bar --transparency
-    font pango: Ubuntu, FontAwesome6Free, FontAwesome6Brands 12
+    font pango: Inconsolata LGC for Powerline, FontAwesome6Free, FontAwesome6Brands 13
     position top
     bindsym button1 nop
     strip_workspace_numbers yes
@@ -93,5 +94,7 @@ mode "Transfer" {
     bindsym a exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
     bindsym d exec ~/.scripts/app_handler.sh "mt_discord";     mode "default"
     bindsym c exec ~/.scripts/app_handler.sh "mt_code";        mode "default"
+    bindsym o exec ~/.scripts/app_handler.sh "mt_okular";      mode "default"
+    bindsym v exec ~/.scripts/app_handler.sh "mt_Mpv";         mode "default"
     bindsym Escape mode "default";
 }

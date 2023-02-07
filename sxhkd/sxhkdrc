@@ -94,8 +94,8 @@ super + grave
 	~/.scripts/container_layout.sh	
 
 # Frequent app workspace handler
-super + {w, t, r, s, a, d, c}
-	~/.scripts/app_handler.sh {firefox, telegram, ranger, spotify, anghami, discord, code}
+super + {w, t, r, s, a, d, c, o, v}
+	~/.scripts/app_handler.sh {firefox, telegram, ranger, spotify, anghami, discord, code, okular, mpv}
 
 # Move to scratchpad
 super + shift + p

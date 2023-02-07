@@ -7,12 +7,11 @@ require('code_runner').setup {
     filetype = {
         go = 'go run $fileName',
         javascript = 'node $fileName',
+        html = 'firefox $fileName',
         c = 'gcc $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt && rm $fileNameWithoutExt',
         cpp = 'g++ $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt && rm $fileNameWithoutExt',
         rust = 'cargo run',
         python = 'python3 $fileName',
-        scheme = 'racket  $fileName',
-        ruby = 'ruby  $fileName',
     },
 
     vim.keymap.set('n', '<F1>', ':w<CR>:RunCode<CR>', { noremap = true, silent = true }),
