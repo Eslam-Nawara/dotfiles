@@ -39,7 +39,7 @@ shift + {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 	~/.scripts/brightness.sh  {higher, lower}
 
 #move through tabs
-{super, super + shift, shift} + Tab
+{alt , shift, super} + Tab
 	i3-msg workspace {next, prev, back_and_forth}
 
 #kill process
@@ -47,7 +47,7 @@ super + q
 	i3-msg kill
 
 #open dmenu
-super + d
+super + shift + d
 	dmenu_run
 
 

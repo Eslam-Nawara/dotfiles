@@ -14,9 +14,8 @@ box_drawing_scale 0.001, 1, 1.5, 2
 #: }}}
 
 #: cursor customization {{{ 
-
-cursor #d1d4e0
-cursor_text_color #111111
+# cursor #d1d4e0
+# cursor_text_color #111111
 
 shell_integration no-cursor
 cursor_shape block
@@ -40,8 +39,7 @@ touch_scroll_multiplier 1.0
 
 #: hide mouse cursor after the specified number of seconds of the mouse not being used. 
 mouse_hide_wait -1
-
-url_color #0087bd
+# url_color #0087bd
 url_style curly
 
 open_url_with default
@@ -126,9 +124,8 @@ single_window_margin_width -1
 window_padding_width 13
 
 placement_strategy center
-
-active_border_color #4C7899
-inactive_border_color #101218
+# active_border_color #4C7899
+# inactive_border_color #101218
 
 inactive_text_alpha 0.5
 
@@ -149,39 +146,38 @@ tab_powerline_style angled
 
 tab_title_template "{index}: {title}"
 active_tab_title_template "{index}: {title}*"
-
-active_tab_foreground   #ffffff
-active_tab_background   #2f343f
+# active_tab_foreground   #ffffff
+# active_tab_background   #2f343f
 active_tab_font_style   normal
-inactive_tab_foreground #676e7d
-inactive_tab_background #2f343f
+# inactive_tab_foreground #676e7d
+# inactive_tab_background #2f343f
 inactive_tab_font_style normal
 #: }}}
 
 #: color scheme {{{ 
 
 background_opacity 0.4
-background            #000000
-foreground            #bbbbbb
-cursor                #bbbbbb
-selection_background  #b4d5ff
-color0                #4c4c4c
-color8                #545454
-color1                #bb0000
-color9                #ff5555
-color2                #5ede8f
-color10               #55ff55
-color3                #f2f067
-color11               #ffff55
-color4                #266ad7
-color12               #5555ff
-color5                #bb00bb
-color13               #ff55ff
-color6                #00d9df
-color14               #55ffff
-color7                #bbbbbb
-color15               #ffffff
-selection_foreground #000000
+# background            #000000
+# foreground            #bbbbbb
+# cursor                #bbbbbb
+# selection_background  #b4d5ff
+# color0                #4c4c4c
+# color8                #545454
+# color1                #bb0000
+# color9                #ff5555
+# color2                #5ede8f
+# color10               #55ff55
+# color3                #f2f067
+# color11               #ffff55
+# color4                #266ad7
+# color12               #5555ff
+# color5                #bb00bb
+# color13               #ff55ff
+# color6                #00d9df
+# color14               #55ffff
+# color7                #bbbbbb
+# color15               #ffffff
+# selection_foreground #000000
 
 #: }}}
 
@@ -282,4 +278,11 @@ map kitty_mod+m             move_window_to_top
 #: }}}
 
 
+#: }}}
+
+#: theme {{{
+# BEGIN_KITTY_THEME
+# Tokyo Night
+include current-theme.conf
+# END_KITTY_THEME
 #: }}}
