@@ -1,45 +1,65 @@
+-- Gruvbox material
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_foreground = "mix"
+vim.g.gruvbox_material_enable_bold = 1
+vim.g.gruvbox_material_enable_italic = 1
+vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_better_performance = 1
+
+-- Catppuccin
 require("catppuccin").setup({
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "macchiato",
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
+  background = {
+    light = "latte",
+    dark = "mocha",
+  },
+  transparent_background = false,
+  show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+  term_colors = false,
+  dim_inactive = {
+    enabled = false,
+    shade = "dark",
+    percentage = 0.15,
+  },
+  styles = {
+    comments = { "italic" },
+    conditionals = {},
+    loops = {},
+    functions = { "bold" },
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+  },
+  color_overrides = {},
+  custom_highlights = {},
+  integrations = {
+    cmp = true,
+    mason = true,
+    fidget = false,
+    gitsigns = true,
+    nvimtree = false,
+    telescope = true,
+    treesitter = true,
+    treesitter_context = true,
+    dap = {
+      enabled = true,
+      enabled_ui = true,
     },
-    transparent_background = false,
-    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-    term_colors = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
+    native_lsp = {
+      enabled = true,
+      underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+      },
     },
-    no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
-    styles = {
-        comments = { "italic" },
-        conditionals = { "bold" },
-        loops = { "bold" },
-        functions = { "bold" },
-        keywords = {},
-        strings = { "italic" },
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-    },
-    color_overrides = {},
-    custom_highlights = {},
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        notify = false,
-        mini = false,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    },
+  },
 })
 
--- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")
