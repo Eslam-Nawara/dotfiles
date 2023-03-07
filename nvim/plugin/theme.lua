@@ -8,10 +8,10 @@ vim.g.gruvbox_material_better_performance = 1
 
 -- Catppuccin
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = {
+  flavour = "macchiato", -- latte, frappe, macchiato, mocha
+  background = { -- :h background
     light = "latte",
-    dark = "mocha",
+    dark = "macchiato",
   },
   transparent_background = false,
   show_end_of_buffer = false, -- show the '~' characters after the end of buffers
@@ -21,13 +21,15 @@ require("catppuccin").setup({
     shade = "dark",
     percentage = 0.15,
   },
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
   styles = {
     comments = { "italic" },
-    conditionals = {},
-    loops = {},
+    conditionals = { "bold" },
+    loops = { "bold" },
     functions = { "bold" },
     keywords = {},
-    strings = {},
+    strings = { "italic" },
     variables = {},
     numbers = {},
     booleans = {},
