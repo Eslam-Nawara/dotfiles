@@ -119,6 +119,7 @@ require("lazy").setup({
   "mbbill/undotree",
   "tpope/vim-repeat",
   "tpope/vim-surround",
+  "tpope/vim-obsession",
   "lilydjwg/colorizer",
   "akinsho/toggleterm.nvim",
   "farmergreg/vim-lastplace",

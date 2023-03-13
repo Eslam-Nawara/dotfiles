@@ -23,7 +23,7 @@ set("n", "N", "Nzzzv")
 
 -- Buffers Control
 set("n", "<Tab>", vim.cmd.bnext, silent_noremap)
-set("n", "ZD", vim.cmd.bdelete, silent_noremap)
+set("n", "<A-esc>", vim.cmd.bdelete, silent_noremap)
 
 -- Text objects
 set("o", "ie", ":<C-u>normal! mzggVG<CR>`z", silent_noremap)

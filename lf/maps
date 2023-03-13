@@ -1,0 +1,50 @@
+map r
+map ra rename
+map rr push ra<c-u>
+map rb push ra<c-a>
+
+map <enter> open
+
+map e
+map ee extract
+
+map d
+map dd cut
+map dD delete
+map dt trash
+map <delete> delete
+
+map y
+map yy copy
+
+map p
+map pp paste
+
+map c
+map cd push $mkdir<space>-p<space>
+map cf push $touch<spcae>
+map cs calcdirsize
+
+map u
+map uu clear
+map uv unselect
+
+map i
+map i pager
+
+map g/ cd /
+map gm cd /mnt/
+map gc cd ~/.config/
+map go cd ~/.opt/
+map gd cd ~/Downloads/
+map gp cd ~/Projects/
+map gD cd ~/.dotfiles/
+map gl cd ~/.local/
+
+map S push w
+
+cmap <tab> cmd-menu-complete
+cmap <backtab> cmd-menu-complete-back
+
+cmap <up> cmd-history-prev
+cmap <down> cmd-history-next

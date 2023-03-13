@@ -57,7 +57,7 @@ bindsym $mod+Shift+9 move container to workspace  $ws9
 bindsym $mod+Shift+0 move container to workspace  $ws10
 
 assign [class="mpv"] $watch
-assign [class="ranger"] $fileManager
+assign [class="lf"] $fileManager
 assign [class="syncplay"] $watch
 assign [class="firefox"] $firefox
 assign [class="TelegramDesktop"] $telegram
@@ -89,7 +89,7 @@ bar {
 mode "Transfer" {
     bindsym w exec ~/.scripts/app_handler.sh "mt_firefox";     mode "default"
     bindsym t exec ~/.scripts/app_handler.sh "mt_telegram";    mode "default"
-    bindsym r exec ~/.scripts/app_handler.sh "mt_ranger";      mode "default"
+    bindsym l exec ~/.scripts/app_handler.sh "mt_lf";          mode "default"
     bindsym s exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
     bindsym a exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
     bindsym d exec ~/.scripts/app_handler.sh "mt_discord";     mode "default"
