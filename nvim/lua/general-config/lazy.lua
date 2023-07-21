@@ -46,6 +46,7 @@ require("lazy").setup({
   "ray-x/lsp_signature.nvim",
   {
     "j-hui/fidget.nvim",
+    tag = 'legacy',
     config = {
       window = { blend = 0 },
     },
@@ -89,6 +90,7 @@ require("lazy").setup({
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "jay-babu/mason-nvim-dap.nvim",
+  "mxsdev/nvim-dap-vscode-js",
 
   -- File exploring
   "nvim-telescope/telescope.nvim",
@@ -99,7 +101,7 @@ require("lazy").setup({
   "kyazdani42/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
   "sainnhe/gruvbox-material",
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",       name = "catppuccin" },
 
   -- Pacman
   {
