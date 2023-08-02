@@ -2,8 +2,8 @@ snippet req "require" w
 require('${1:module}');$0
 endsnippet
 
-snippet creq "CommonJS require" b
-const ${1:name} = require('${2:module}');$0
+snippet coreq "CommonJS require" b
+const ${2:name} = require('${1:module}');$0
 endsnippet
 
 snippet modexp "module exports" b
@@ -41,8 +41,8 @@ endsnippet
 
 snippet case "case statement" b
 case ${1:value}
-	$0
-	break;
+$0
+break;
 endsnippet
 
 snippet trycatch "try catch block" b
@@ -104,8 +104,14 @@ ${1:async }(${2:parameters}) => {
 }
 endsnippet
 
-snippet hand "http request handler" w
-${1:async }(req, res$2) => {
+snippet hand "express middleware" w
+async (req, res, next) => {
+	${0}
+}
+endsnippet
+
+snippet errhand "express error handler middleware" w
+async (req, res, next) => {
 	${0}
 }
 endsnippet
@@ -165,45 +171,45 @@ set ${1:property} (${2:value}) {
 endsnippet
 
 snippet foreach "forEach method" i
-forEach((${1:element}) => {
+${1:collection.}forEach((${2:element}) => {
 	$0
 });
 endsnippet
 
 snippet map "map method" i
-map((${1:item}) => {
+${1:collection.}map((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet every "every method" i
-every((${1:item}) => {
+${1:collection.}every((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet some "some method" i
-some((${1:item}) => {
+${1:collection.}some((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet find "find method" i
-find((${1:item}) => {
+${1:collection.}find((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet filter "filter method" i
-filter((${1:item}) => {
+${1:collection.}filter((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet reduce "reduce method" i
-reduce((${1:previous}, ${2:current}) => {
+${1:collection.}reduce((${2:aggregated}, ${3:current}) => {
 	${0}
-}, ${3:initial});
+}, ${4:initial});
 endsnippet
 
 snippet desc "jest describe function" b
@@ -228,37 +234,25 @@ it('${1:description}', (done) => {
 });
 endsnippet
 
-snippet bef "jest before function" b
-before(${1:async }() => {
-	${0}
-});
-endsnippet
-
-snippet befa "jest beforeAll function" b
+snippet befall "jest beforeAll function" b
 beforeAll(${1:async }() => {
 	${0}
 });
 endsnippet
 
-snippet befe "jest beforeEach function" b
+snippet befeach "jest beforeEach function" b
 beforeEach(${1:async }() => {
 	${0}
 });
 endsnippet
 
-snippet aft "jest after function" b
-after(${1:async }() => {
-	${0}
-});
-endsnippet
-
-snippet afte "jest afterEach function" b
+snippet afteach "jest afterEach function" b
 afterEach(${1:async }() => {
 	${0}
 });
 endsnippet
 
-snippet afta "jest afterAll function" b
+snippet aftall "jest afterAll function" b
 afterAll(${1:async }() => {
 	${0}
 });
