@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = "i:hor20"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4

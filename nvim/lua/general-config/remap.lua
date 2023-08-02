@@ -16,15 +16,45 @@ set("x", "J", ":m '>+1<CR>gv=gv", silent)
 set("x", "K", ":m '<-2<CR>gv=gv", silent)
 
 -- Navigation
-set("n", "<C-d>", "<C-d>zz")
-set("n", "<C-u>", "<C-u>zz")
+set("n", "<C-d>", "5<C-d>zz")
+set("n", "<C-u>", "5<C-u>zz")
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
 -- Buffers Control
-set("n", "<Tab>", vim.cmd.bnext, silent_noremap)
-set("n", "<S-Tab>", vim.cmd.bprev, silent_noremap)
+set("n", "<Tab>", "<C-6>", noremap)
 set("n", "<A-esc>", vim.cmd.bdelete, silent_noremap)
+
+-- Quickfix list
+set("n", "<leader>qn", function()
+  if not pcall(vim.cmd.cnext) then
+    print("Quickfix: No Next Errors")
+  else
+    vim.cmd.normal("zz")
+  end
+end, { desc = "Quickfix Next" })
+
+set("n", "<leader>qp", function()
+  if not pcall(vim.cmd.cprevious) then
+    print("Quickfix: No Previous Errors")
+  else
+    vim.cmd.normal("zz")
+  end
+end, { desc = "Quickfix Previous" })
+
+set("n", "<leader>qq", function()
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["quickfix"] == 1 then
+      qf_exists = true
+    end
+  end
+  if qf_exists then
+    vim.cmd.cclose()
+  else
+    vim.cmd.copen()
+  end
+end, { desc = "Quickfix Toggle" })
 
 -- Text objects
 set("o", "ie", ":<C-u>normal! mzggVG<CR>`z", silent_noremap)
@@ -32,6 +62,7 @@ set("x", "ie", ":<C-u>normal! ggVG<CR>", silent_noremap)
 
 -- Misc
 set("n", "J", "mzJ`z", silent_noremap)
-set("n", "<CR>", "o<esc>", noremap)
-set("n", "<S-CR>", "O<esc>", noremap)
+set("n", "<C-j>", "o<esc>", noremap)
+set("n", "<C-k>", "O<esc>", noremap)
 set("n", "gp", "`[v`]", noremap)
+set("t", "<A-esc>", "<C-\\><C-n>", noremap)
