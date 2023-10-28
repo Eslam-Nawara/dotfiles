@@ -42,6 +42,10 @@ shift + {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 {alt , alt + shift, super} + Tab
 	i3-msg workspace {next, prev, back_and_forth}
 
+#move through tabs
+super + {l, h}
+	i3-msg workspace {next, prev}
+
 #kill process
 super + q
 	i3-msg kill
@@ -94,7 +98,7 @@ super + grave
 	~/.scripts/container_layout.sh	
 
 # Frequent app workspace handler
-super + {w, t, l, s, a, d, c, o, v}
+super + {w, t, i, s, a, d, c, o, v}
 	~/.scripts/app_handler.sh {firefox, telegram, lf, spotify, anghami, discord, code, okular, mpv}
 
 # Move to scratchpad

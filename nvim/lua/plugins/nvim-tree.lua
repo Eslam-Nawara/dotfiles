@@ -33,7 +33,7 @@ return {
         number = true,
         relativenumber = true,
         signcolumn = "yes",
-        hide_root_folder = false,
+        -- hide_root_folder = false,
       },
       renderer = {
         group_empty = true,

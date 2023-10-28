@@ -60,10 +60,10 @@ return {
           end,
         },
         sources = cmp.config.sources({
-          { name = "ultisnips", keyword_length = 2 },
-          { name = "nvim_lsp",  keyword_length = 2 },
-          { name = "buffer",    keyword_length = 5 },
-          { name = "path",      keyword_length = 2 },
+          { name = "ultisnips", keyword_length = 1 },
+          { name = "nvim_lsp",  keyword_length = 1 },
+          { name = "buffer",    keyword_length = 1 },
+          { name = "path",      keyword_length = 1 },
         }),
         formatting = {
           format = lspkind.cmp_format({
