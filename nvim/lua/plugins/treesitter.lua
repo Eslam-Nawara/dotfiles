@@ -1,6 +1,7 @@
 return {
   "andymass/vim-matchup",
-  "HiPhish/nvim-ts-rainbow2",
+  -- "HiPhish/nvim-ts-rainbow2",
+  "hiphish/rainbow-delimiters.nvim",
   "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   {
