@@ -1,0 +1,16 @@
+session_name: config
+windows:
+- window_name: main
+  focus: 'true'
+  layout: c8be,133x28,0,0,1
+  start_directory: /home/eslam/.dotfiles
+  panes:
+  - focus: 'true'
+    shell_command: nvim .
+
+- window_name: zsh
+  start_directory: /home/eslam/.dotfiles
+  layout: c8bf,133x28,0,0,2
+  panes:
+  - focus: 'true'
+  window_name: zsh

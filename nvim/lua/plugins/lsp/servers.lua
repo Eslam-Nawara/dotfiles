@@ -11,6 +11,7 @@ M.setup = function()
     "bashls",
     "dockerls",
     "jsonls",
+    "rust_analyzer",
   }
 
   local additional_config = {

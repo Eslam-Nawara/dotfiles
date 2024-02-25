@@ -64,6 +64,16 @@ return {
             ["<leader>S"] = "@parameter.inner",
           },
         },
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_previous_start = {
+            ["<leader>ha"] = "@parameter.inner",
+          },
+          goto_next_start = {
+            ["<leader>la"] = "@parameter.inner",
+          },
+        },
       },
     },
     config = function(_, opts)

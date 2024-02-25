@@ -22,13 +22,13 @@ cmd open ${{
         application/pgp-encrypted | inode/x-empty | application/octet-stream)
         "${EDITOR:-nvim}" ${selected}
         ;;
-    image/svg+xml | image/png | image/jpeg | image/gif)
+    image/*)
         run "${IMAGE_VIEWER:-eog}" $selected
         ;;
     audio/*)
         run "${AUDIO_PLAYER:-"${MPV:-mpv}"}" --force-window --fs=no $selected
         ;;
-    video/*)
+    video/* | ts)
         run "${VIDEO_PLAYER:-"${MPV:-mpv}"}" $selected
         ;;
     *)

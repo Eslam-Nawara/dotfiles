@@ -1,0 +1,28 @@
+session_name: sdk-go
+
+windows:
+- window_name: nvim
+  focus: 'true'
+  start_directory: /home/eslam/work/tfgrid-sdk-go
+  layout: c8be,133x28,0,0,1
+  panes:
+  - focus: 'true'
+    shell_command: nvim .
+
+- window_name: zsh
+  start_directory: /home/eslam/work/tfgrid-sdk-go
+  layout: c8bf,133x28,0,0,2
+  panes:
+  - focus: 'true'
+    shell_command: |-
+      alias run='go run *'
+      postgres start
+      docker container start mongo
+      clear
+  
+- window_name: git
+  start_directory: /home/eslam/work/tfgrid-sdk-go
+  layout: c8bf,133x28,0,0,2
+  panes:
+  - focus: 'true'
+    shell_command: lazygit

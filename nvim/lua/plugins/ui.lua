@@ -1,5 +1,6 @@
 return {
   "kyazdani42/nvim-web-devicons",
+  "RRethy/vim-illuminate",
   { "lewis6991/gitsigns.nvim", opts = { numhl = true } },
   {
     "lukas-reineke/indent-blankline.nvim",
